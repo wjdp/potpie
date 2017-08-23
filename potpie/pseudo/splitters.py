@@ -180,3 +180,11 @@ class HTMLSpecialEntitiesSplitter(BaseSplitter):
     Splits the string on HTML special entities, such as &lt;, &amp;, etc.
     """
     REGEX = r'&[a-zA-Z]+;'
+
+
+class PlaceholderSplitter(BaseSplitter):
+    """
+    Split the string on python format placeholders, such as {var}.
+    """
+    # Lets reuse the printf regex from the validators
+    REGEX = r'{\w+}'
